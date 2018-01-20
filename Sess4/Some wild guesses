@@ -1,0 +1,25 @@
+	What is the difference between a list and a tuple?
+Tuples cant be modified
+
+	Given two lists [1,3,6,78,35,55] and [12,24,35,24,88,120,155], find the common elements.
+
+Convert one to set, .intersect
+
+	Write a program that takes in a list of words from keyboard and prints only the ones that appear only once.
+(dynamic ?)
+write newlist by for loop. if it finds duplicate, move to third list and remove from newlist.
+
+
+	Define a function that takes a string and counts the number of times each letter appears. Decide what is the best way of storing this information.
+
+save all characters in list
+make a set from list, for every character in set count its ocurrence in list.
+
+Given a list of numbers, use list comprehension to:
+square each number.
+square every odd number, and removing the even ones.
+square every even number leaving the odds unchanged.
+
+Compute pi using Leibniz’s formula. π/4 = 1 − 1/3 + 1/5 – 1/7 + 1/9… To improve accuracy, you should sort the elements so you sum the smallest ones first. How many terms do you need to get six decimal places? You can compare values with math.pi.
+
+

@@ -9,15 +9,15 @@ def write_complement2(input_file_name, output_file_name):
         "G" : "C"
     }
     for line in lines:
-        line = line.rstrip()
-        if ">" == line[0]:
+        line = line.strip()
+        if ">" in line:
             line += " complement" 
-            outfh.write(test + '\n')
+            outfh.write(line + '\n')
         else:
             new_line = ""
-            for char in line:
-                if char in complement:
-                    char = complement[char]
-                new_line += char
+            for nu in line:
+                if nu in complement:
+                    nu = complement[nu]
+                new_line += nu
                 
             outfh.write(new_line + '\n')
