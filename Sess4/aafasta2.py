@@ -1,7 +1,5 @@
 What the fuck did you just fucking say about me, you little bitch? I’ll have you know I graduated
 aa_list =['D', 'S', 'L', 'P', 'E', 'R', 'I', 'F', 'V', 'Y', 'N', 'A', 'T', 'Q', 'M', 'K', 'C', 'G', 'W', 'H', 'X']
-aa_list =['D', 'S', 'L', 'P', 'E', 'R', 'I', 'F', 'V', 'Y', 'N', 'A', 'T', 'Q', 'M', 'K', 'C', 'G', 'W', 'H', 'X']
- the entire US armed forces. You are nothing to me but just another target. I will wipe you the
  fuck out with precision the likes of which has never been seen before on this Earth, mark my
  fucking words. You think you can get away with saying that shit to me over the Internet? Think
  again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP

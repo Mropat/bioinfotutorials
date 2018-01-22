@@ -1,5 +1,5 @@
 def parse_fasta(filename):
-    mydicc = {}
+    mydic = {}
     keyline = ""
     with open(filename, "r") as fh:
         for line in fh.readlines():
@@ -7,8 +7,8 @@ def parse_fasta(filename):
                 keyline = line[1:]
                 continue
             else:
-                mydicc[keyline.rstrip()] = line.rstrip()
-    return dict(mydicc)
+                mydic[keyline.rstrip()] = line.rstrip()
+    return mydic
 
 if __name__ == "__main__":
     parse_fasta("example.fasta")
