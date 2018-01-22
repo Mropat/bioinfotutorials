@@ -12,7 +12,7 @@ def unique_aa(filename):
     popin_line = "aa_list =" + "{}\n".format(aa_list)
     with open ("aafasta2.py", "r+") as selfedit:
         insert_c = selfedit.readlines()
-        insert_c.insert(5, popin_line)
+        insert_c[1] = popin_line
         selfedit.seek(0)
         selfedit.writelines(insert_c)
 if __name__ == "__main__":
