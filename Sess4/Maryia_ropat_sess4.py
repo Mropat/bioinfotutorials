@@ -15,9 +15,6 @@ def parse_fasta(filename):
 
 ### Collect a list of unique aminoacids
 
-aa_list = ['X', 'V', 'W', 'F', 'T', 'C', 'R', 'H', 'E', 'A', 'G', 'S', 'Z', 'O', 'K', 'P', 'M', 'L', 'Y', 'U', 'B', 'D', 'I', 'N', 'Q']
-
-
 def unique_aa(filename):
     aa_set = set()
     with open(filename, "r") as fh:
@@ -30,11 +27,8 @@ def unique_aa(filename):
                         if char.isalpha():
                             aa_set.add(char)
     popin_line = "aa_list = " + "{}\n".format(sorted(list(aa_set)))
-    with open ("Maryia_ropat_sess4.py", "r+") as selfedit:
-        insert_c = selfedit.readlines()
-        insert_c[17] = popin_line
-        selfedit.seek(0)
-        selfedit.writelines(insert_c)        
+    return popin_line
+       
             
         
 ### Merge group results
@@ -108,10 +102,27 @@ def save_unique(lab_A, lab_B, output_filename):
         
         for key, val in uniques.items():
             printing = key + " "+ str(val) + "\n"
-            writehandler.write(printing)      
+            writehandler.write(printing)
+
+
+def CRISPR_module(guide, insert):
+    with open ("Maryia_ropat_sess4.py", "r+") as selfedit:
+        PAM = 0
+        insert_c = selfedit.readlines()
+        for line in insert_c:
+            PAM +=1
+            if guide in line:
+                break
+        insert_c[PAM-1] = insert_c[PAM-1] + "\n"
+        insert_c[PAM] = insert + "\n"
+        selfedit.seek(0)
+        selfedit.writelines(insert_c)
+            
+
+        
 
 if __name__ == '__main__':
     save_unique("results_labA.dat", "results_labB.dat", "results_unique.dat")
     merge_with_average("results_labA.dat", "results_labB.dat", "results_merged.dat")
-    unique_aa("uniref90.fasta")
     parse_fasta("example.fasta")
+    CRISPR_module("list of unique aminoacids", unique_aa("example.fasta"))
