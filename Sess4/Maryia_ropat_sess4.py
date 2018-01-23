@@ -15,21 +15,24 @@ def parse_fasta(filename):
 
 ### Collect a list of unique aminoacids
 
+aa_list = ['X', 'V', 'W', 'F', 'T', 'C', 'R', 'H', 'E', 'A', 'G', 'S', 'Z', 'O', 'K', 'P', 'M', 'L', 'Y', 'U', 'B', 'D', 'I', 'N', 'Q']
+
+
 def unique_aa(filename):
-    aa_list =[]
+    aa_set = set()
     with open(filename, "r") as fh:
-        for line in fh.readlines():
+        for line in fh:
             if ">" in line[0]:
                 continue
             else:
                 for char in line:
-                    if char.isalpha():
-                        if char not in aa_list:
-                            aa_list.append(char)
-    popin_line = "    aa_list =" + "{}\n".format(aa_list)
+                    if char not in aa_set:
+                        if char.isalpha():
+                            aa_set.add(char)
+    popin_line = "aa_list = " + "{}\n".format(sorted(list(aa_set)))
     with open ("Maryia_ropat_sess4.py", "r+") as selfedit:
         insert_c = selfedit.readlines()
-        insert_c[18] = popin_line
+        insert_c[17] = popin_line
         selfedit.seek(0)
         selfedit.writelines(insert_c)        
             
